@@ -85,7 +85,8 @@ video {
     font-size: 100%;
     font: inherit;
     vertical-align: baseline;
-    font-family: "Graphik Kinopoisk LC Web SB";
+    font-family: "Graphik Kinopoisk LC Web SB", sans-serif;
+    line-height: 1.4;
 }
 
 /* HTML5 display-role reset for older browsers */

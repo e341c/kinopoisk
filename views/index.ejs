@@ -9,30 +9,44 @@
     <link rel="stylesheet" href="/style/all.css">
 </head>
 <body>
-    <header>
-        <div class="head-logo">
-            <img src="/images/logo.svg" alt="">
-        </div>
-        <div class="head-menu">
-            <a href="">
-                <img src="/images/icons/play.svg" alt="">
-                Онлайн-кинотеатр
-            </a>
-            <a href="">
-                <img src="/images/icons/present.svg" alt="">
-                День рождения Плюса
-            </a>
-            <div class="head-search">
-                <input type="text" placeholder="Фильмы, сериалы, персоны">
-                <button>
-                    <svg class="styles_icon__1bYKL search-form-submit-button__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M13.6667 8.74984C13.6667 11.4652 11.4654 13.6665 8.75002 13.6665C6.03462 13.6665 3.83335 11.4652 3.83335 8.74984C3.83335 6.03444 6.03462 3.83317 8.75002 3.83317C11.4654 3.83317 13.6667 6.03444 13.6667 8.74984ZM12.7965 14.5643C11.6494 15.3641 10.2545 15.8332 8.75002 15.8332C4.838 15.8332 1.66669 12.6619 1.66669 8.74984C1.66669 4.83782 4.838 1.6665 8.75002 1.6665C12.662 1.6665 15.8334 4.83782 15.8334 8.74984C15.8334 10.2544 15.3643 11.6494 14.5643 12.7966L17.9672 16.1994L16.1994 17.9672L12.7965 14.5643Z" fill="#000"></path></svg>
-                </button>
+    <%- include('partials/header.ejs') %>
+    <div class="container">
+        <div class="main">
+            <div class="categories">
+                <a href="">Главная</a>
+                <a href="">Онлайн-кинотеатр</a>
+                <a href="">Фильмы</a>
+                <a href="">Сериалы</a>
+                <a href="">Спорт</a>
+                <a href="">Билеты в кино</a>
+                <a href="">Медиа</a>
+            </div>
+            <div class="main-content">
+                <div class="main-card">
+                    <div class="card-left">
+                        <div class="film-img">
+                            <img src="" alt="">
+                        </div>
+                        <div class="film-info">
+                            <a href="">Зеленая миля</a>
+                            <a href="">The Green Mile, 1999, 189 мин.</a>
+                            <a href="">США • драма  Режиссёр: Фрэнк Дарабонт</a>
+                            <a href=""> В ролях: Том Хэнкс, Дэвид Морс</a>
+                            <button class="film-btn">Смотреть</button>
+                        </div>
+                    </div>
+                    <div class="card-right">
+                        <div class="film-rate">
+                            <p>9.2</p>
+                        </div>
+                        <button class="film-btn">
+                            <img src="/images/icons/add.svg" alt="">
+                            Буду смотреть
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="head-buttons">
-            <a href="">Попробовать Плюс</a>
-            <a href="">Войти</a>
-        </div>
-    </header>
+    </div>
 </body>
 </html>
