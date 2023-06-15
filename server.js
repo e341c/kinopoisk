@@ -9,6 +9,7 @@ app.use(express.static(__dirname + '/public'))
 app.set("view engine", "ejs")
 
 app.use(require('./server/pages/router.js'))
+app.use(require('./server/Genres/router.js'))
 
 
 const PORT = 8000
