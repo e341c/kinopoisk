@@ -1,0 +1,84 @@
+.add-film-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+}
+.add-film-content h3{
+    margin: 20px 0 20px;
+    font-size: 32px;
+    font-weight: 700;
+}
+.add-film{
+    width: 100%;
+}
+.add-film fieldset{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+.add-film input{
+    font-size: 18px;
+    padding: 8px 12px;
+    outline-width: 1px;
+    outline-style: solid;
+    outline-color: rgba(0, 0, 0, 0,4);
+    border: 0;
+    border-radius: 5px;
+    transition: .2s;
+}
+.add-film input:focus{
+    outline-width: 2px;
+    outline-style: solid;
+    outline-color: #fc0;
+}
+.label{
+    font-size: 18px;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+.add-film select{
+    font-size: 18px;
+    padding: 8px 12px;
+    outline-width: 1px;
+    outline-style: solid;
+    outline-color: rgba(0, 0, 0, 0,4);
+    border: 0;
+    border-radius: 5px;
+    transition: .2s;
+}
+.add-film select:focus{
+    outline-width: 2px;
+    outline-style: solid;
+    outline-color: #fc0;
+}
+.add-film-file-input{
+    opacity: 0;
+    
+}
+.custom-input{
+    font-size: 18px;
+    padding: 6px 12px;
+    outline-width: 1px;
+    outline-style: solid;
+    outline-color: rgba(0, 0, 0, 0,4);
+    border: 0;
+    border-radius: 5px;
+    transition: .2s;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.custom-input:hover{
+    outline-width: 2px;
+    outline-style: solid;
+    outline-color: #fc0;
+}
+.custom-input-label{
+    position: relative;
+    margin: 0;
+}
+.add-film-btn-size{
+    padding: 10px;
+    font-weight: 600;
+}

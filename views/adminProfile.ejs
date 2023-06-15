@@ -10,7 +10,24 @@
         <div class="main">
             <%- include('partials/categories.ejs') %>
             <div class="main-content">
-                <h3>Фильмы и сериалы</h3>
+                <h3>Профиль</h3>
+                <div class="profile">
+                    <div class="profile-img">
+                        <img src="/images/User-avatar.svg.png" alt="">
+                    </div>
+                    <div class="profile-info">
+                        <p><span>Полное имя:</span>Эрик Табыс</p> 
+                        <p><span>E-mail:</span>tabyserik@gmail.com</p>
+                        <div class="profile-btns">
+                            <button class="btn btn-primary">Редактировать профиль</button>
+                            <button class="btn btn-danger">Выход</button>
+                        </div>
+                    </div>
+                </div>
+                <h3>Сохраненные фильмы</h3>
+                <a style="text-decoration: none;" href="/new">
+                    <button class="btn btn-primary">Добавить фильм</button>
+                </a>
                 <div class="main-card">
                     <div class="card-left">
                         <div class="film-img">
@@ -37,10 +54,15 @@
                             <p>9.2</p>
                             <img src="/images/icons/rating right.svg" alt="">
                         </div>
-                        <button class="film-btn2">
-                            <img src="/images/icons/add.svg" alt="">
-                            Буду смотреть
-                        </button>
+                        <div class="admin-btns">
+                            <a href="/edit" class="btn btn-edit">
+                                Редактировать
+                            </a>
+                            <button class="btn btn-danger">
+                                Удалить
+                            </button>
+                        </div>
+                     
                     </div>
                 </div>
                 <div class="main-card">
@@ -69,10 +91,15 @@
                             <p>9.2</p>
                             <img src="/images/icons/rating right.svg" alt="">
                         </div>
-                        <button class="film-btn2">
-                            <img src="/images/icons/add.svg" alt="">
-                            Буду смотреть
-                        </button>
+                        <div class="admin-btns">
+                            <button class="btn btn-edit">
+                                Редактировать
+                            </button>
+                            <button class="btn btn-danger">
+                                Удалить
+                            </button>
+                        </div>
+                     
                     </div>
                 </div>
             </div>
