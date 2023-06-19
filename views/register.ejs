@@ -6,7 +6,7 @@
 </head>
 <body>
     <div class="background-img">
-        <form action="" class="forms">
+        <form action="/api/signup" method="POST" class="forms">
             <h3>Регистрация</h3>
             <div class="go-back-btn">
                 <a href="/">
@@ -15,25 +15,21 @@
             </div>
             <fieldset>
                 <label for="">E-mail</label>
-                <input type="email" placeholder="Введите почту">
+                <input type="email" placeholder="Введите почту" name="email">
             </fieldset>
             <fieldset>
-                <label for="">Имя</label>
-                <input type="text" placeholder="Введите имя">
-            </fieldset>
-            <fieldset>
-                <label for="">Фамилия</label>
-                <input type="text" placeholder="Введите фамилию">
+                <label for="">Полное имя</label>
+                <input type="text" placeholder="Введите полное имя" name="full_name">
             </fieldset>
             <fieldset>
                 <label for="">Пароль</label>
-                <input type="text" placeholder="Введите пароль">
+                <input type="text" placeholder="Введите пароль" name="password">
             </fieldset>
             <fieldset>
                 <label for="">Подтвердите пароль</label>
-                <input type="text" placeholder="Подтвердите пароль">
+                <input type="text" placeholder="Подтвердите пароль" name="re_password">
             </fieldset>
-            <button>Войти</button>
+            <button type="submit">Зарегистрироваться</button>
             <div class="register-link">
                 <p>У вас уже есть аккаунт?</p><a href="/login">Войдите</a>
             </div>

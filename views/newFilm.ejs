@@ -37,15 +37,16 @@
                     <fieldset>
                         <label class="label" for="">Страна выпуска</label>
                         <select name="country" id="">
-                            <option value="">Казахстан</option>
-                            <option value="">США</option>
+                            <% countries.forEach(item => { %>
+                                <option value=""><%= item.name %></option>
+                            <% }) %>
                         </select>
                     </fieldset>
                     <fieldset>
                         <label class="label" for="">Выберите жанр</label>
                         <select name="genre" id="">
                             <% genres.forEach(item => { %>
-                                <option value=""><%= item.name%></option>
+                                <option value=""><%= item.name %></option>
                             <% }) %>
                         </select>
                     </fieldset>

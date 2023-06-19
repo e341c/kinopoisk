@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const Genres = require('../Genres/Genres.js')
+const Countries = require('../Country/Country.js')
 
 router.get('/', async(req, res) => {
     const allGenres = await  Genres.find()
@@ -24,12 +25,20 @@ router.get('/admin', (req, res) => {
 
 router.get('/new', async(req, res) => {
     const allGenres = await  Genres.find()
-    res.render("newFilm.ejs", {genres: allGenres})
+    const allCountries = await Countries.find()
+    res.render("newFilm.ejs", {
+        genres: allGenres,
+        countries: allCountries
+    })
 })
 
 router.get('/edit', async(req, res) => {
-    const allGenres = await  Genres.find()
-    res.render("editFilm.ejs", {genres: allGenres})
+    const allGenres = await Genres.find()
+    const allCountries = await Countries.find()
+    res.render("editFilm.ejs", {
+        genres: allGenres,
+        countries: allCountries
+    })
 })
 
 module.exports = router
