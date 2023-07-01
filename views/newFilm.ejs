@@ -10,11 +10,11 @@
         <div class="main">
             <div class="add-film-content">
                 <h3>Новый фильм</h3>
-                <div class="add-film">
+                <form action="/api/new" method="POST" enctype="multipart/form-data" class="add-film">
                     <fieldset>
                         <label class="label" for="">Добавить картинку фильма</label>
                         <label class="custom-input-label">
-                            <input class="add-film-file-input" type="file" name="filming">
+                            <input class="add-film-file-input" type="file" name="image">
                             <span class="custom-input">Добавить картинку</span>
                         </label>
                     </fieldset>
@@ -38,7 +38,7 @@
                         <label class="label" for="">Страна выпуска</label>
                         <select name="country" id="">
                             <% countries.forEach(item => { %>
-                                <option value=""><%= item.name %></option>
+                                <option value="<%= countries._id %>"><%= item.name %></option>
                             <% }) %>
                         </select>
                     </fieldset>
@@ -46,14 +46,14 @@
                         <label class="label" for="">Выберите жанр</label>
                         <select name="genre" id="">
                             <% genres.forEach(item => { %>
-                                <option value=""><%= item.name %></option>
+                                <option value="<%= genres._id %>"><%= item.name %></option>
                             <% }) %>
                         </select>
                     </fieldset>
                     <fieldset>
                         <button class="btn btn-primary add-film-btn-size" type="submit">Добавить</button>
                     </fieldset>
-                </div>
+                </form>
             </div>
         </div>
     </div>

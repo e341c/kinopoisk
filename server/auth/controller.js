@@ -20,7 +20,8 @@ const signUp = async (req, res) => {
                     new User({
                         email: req.body.email,
                         full_name: req.body.full_name,
-                        password: hash
+                        password: hash,
+                        isAdmin: false
                     }).save()
                     res.redirect('/login')
                 });
@@ -33,7 +34,12 @@ const signUp = async (req, res) => {
 }
 
 const signIn = async(req, res) => {
-    res.redirect(`/profile/${req.user._id}`)
+    if(req.user.isAdmin){
+        res.redirect(`/admin/${req.user._id}`)
+    }else{
+        res.redirect(`/profile/${req.user._id}`)
+    }
+    
 }
 
 const signOut = async(req, res) => {

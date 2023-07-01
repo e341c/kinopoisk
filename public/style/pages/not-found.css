@@ -1,0 +1,29 @@
+.not-found-bg{
+    padding: 20px 5% 50px;
+    background: #141414;
+    height: 100vh;
+}
+.not-found{
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+.not-found h1{
+    font-size: 45px;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+.not-found p{
+    color: hsla(0,0%,100%,0.6);
+    margin-bottom: 60px;
+}
+.not-found a{
+    text-decoration: none;
+    color: hsla(0,0%,100%,0.8);
+    transition: .25s;
+}
+.not-found a:hover{
+    color: hsla(0,0%,100%,1);
+}

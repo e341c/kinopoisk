@@ -27,6 +27,7 @@ app.use(require('./server/pages/router.js'))
 app.use(require('./server/Genres/router.js'))
 app.use(require('./server/Country/router.js'))
 app.use(require('./server/auth/router.js'))
+app.use(require('./server/Films/router.js'))
 
 
 const PORT = 8000

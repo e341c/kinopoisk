@@ -25,10 +25,18 @@
     </div>
     <div class="head-buttons">
         <a href="">Попробовать Плюс</a>
-        <% if(user._id && user.full_name.length > 0){ %>
+        <% if(user._id && user.isAdmin){ %>
+
+            <a href="/admin/<%= user._id %>">Профиль</a>
+
+        <% }else if(user._id && !user.isAdmin){ %>
+
             <a href="/profile/<%= user._id %>">Профиль</a>
+
         <% }else{ %>
+
             <a href="/login">Войти</a>
+            
         <% } %>
     </div>
 </header>
