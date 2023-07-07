@@ -3,11 +3,15 @@ const router = express.Router()
 const Genres = require('../Genres/Genres.js')
 const Countries = require('../Country/Country.js')
 const User = require('../auth/Users.js')
+const Films = require('../Films/Film.js')
 
 router.get('/', async(req, res) => {
-    const allGenres = await  Genres.find()
+    const allGenres = await Genres.find()
+    const allFilms = await Films.find().populate('genre').populate('country')
+    console.log(allFilms);
     res.render('index.ejs', {
         genres: allGenres,
+        films: allFilms,
         user: req.user ? req.user: {}
     })
 })
@@ -21,10 +25,12 @@ router.get('/register', (req, res) => {
 
 router.get('/profile/:id', async(req, res) => {
     const allGenres = await  Genres.find()
+    const allFilms = await Films.find().populate('genre').populate('country')
     const user = await User.findById(req.params.id)
     if(user){
         res.render("profile.ejs", {
             genres: allGenres,
+            films: allFilms,
             user: user,
             loginUser: req.user
         })
@@ -36,9 +42,11 @@ router.get('/profile/:id', async(req, res) => {
 
 router.get('/admin/:id', async(req, res) => {
     const allGenres = await  Genres.find()
+    const allFilms = await Films.find().populate('genre').populate('country').populate('author')
     const user = await User.findById(req.params.id)
     res.render("adminProfile.ejs", {
         genres: allGenres,
+        films: allFilms,
         loginUser: req.user ? req.user: {},
         user: user
     })
@@ -46,20 +54,22 @@ router.get('/admin/:id', async(req, res) => {
 
 router.get('/new', async(req, res) => {
     const allGenres = await  Genres.find()
-    const allCountries = await Countries.find()
+    const allCountry = await Countries.find()
     res.render("newFilm.ejs", {
-        genres: allGenres,
-        countries: allCountries,
+        genre: allGenres,
+        country: allCountry,
         user: req.user ? req.user: {}
     })
 })
 
-router.get('/edit', async(req, res) => {
+router.get('/edit/:id', async(req, res) => {
     const allGenres = await Genres.find()
-    const allCountries = await Countries.find()
+    const allCountry = await Countries.find()
+    const allFilms = await Films.findById(req.params.id)
     res.render("editFilm.ejs", {
-        genres: allGenres,
-        countries: allCountries,
+        genre: allGenres,
+        country: allCountry,
+        films: allFilms,
         user: req.user ? req.user: {}
     })
 })

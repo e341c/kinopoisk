@@ -10,7 +10,7 @@
         <div class="main">
             <div class="add-film-content">
                 <h3>Новый фильм</h3>
-                <form action="/api/new" method="POST" enctype="multipart/form-data" class="add-film">
+                <form action="/api/films/new" method="POST" enctype="multipart/form-data" class="add-film">
                     <fieldset>
                         <label class="label" for="">Добавить картинку фильма</label>
                         <label class="custom-input-label">
@@ -37,16 +37,16 @@
                     <fieldset>
                         <label class="label" for="">Страна выпуска</label>
                         <select name="country" id="">
-                            <% countries.forEach(item => { %>
-                                <option value="<%= countries._id %>"><%= item.name %></option>
+                            <% country.forEach(item => { %>
+                                <option value="<%= item._id %>"><%= item.name %></option>
                             <% }) %>
                         </select>
                     </fieldset>
                     <fieldset>
                         <label class="label" for="">Выберите жанр</label>
                         <select name="genre" id="">
-                            <% genres.forEach(item => { %>
-                                <option value="<%= genres._id %>"><%= item.name %></option>
+                            <% genre.forEach(item => { %>
+                                <option value="<%= item._id %>"><%= item.name %></option>
                             <% }) %>
                         </select>
                     </fieldset>

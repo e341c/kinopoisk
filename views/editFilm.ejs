@@ -10,50 +10,59 @@
         <div class="main">
             <div class="add-film-content">
                 <h3>Редактировать фильм</h3>
-                <div class="add-film">
+                <form action="/api/films/edit" method="POST" enctype="multipart/form-data" class="add-film">
+                    <fieldset>
+                        <input type="hidden" value="<%=films._id%>" name="id">
+                    </fieldset>
                     <fieldset>
                         <label class="label" for="">Изменить картинку фильма</label>
                         <label class="custom-input-label">
-                            <input class="add-film-file-input" type="file" name="filming">
-                            <span class="custom-input">Добавить картинку</span>
+                            <input class="add-film-file-input" type="file" name="image">
+                            <span class="custom-input">Изменить картинку</span>
                         </label>
                     </fieldset>
                     <fieldset>
                         <label class="label" for="">Название фильма на русском</label>
-                        <input type="text" placeholder="Введите название фильма на русском" name="titleRus">
+                        <input type="text" placeholder="Введите название фильма на русском" value="<%= films.titleRus %>" name="titleRus">
                     </fieldset>
                     <fieldset>
                         <label class="label" for="">Название фильма на английском</label>
-                        <input type="text" placeholder="Введите название фильма на английском" name="titleEng">
+                        <input type="text" placeholder="Введите название фильма на английском" value="<%= films.titleEng %>" name="titleEng">
                     </fieldset>
                     <fieldset>
                         <label class="label" for="">Год выпуска</label>
-                        <input type="text" placeholder="Введите год выпуска фильма" name="year">
+                        <input type="text" placeholder="Введите год выпуска фильма" value="<%= films.year %>" name="year">
                     </fieldset>
                     <fieldset>
                         <label class="label" for="">Длительность</label>
-                        <input type="text" placeholder="Введите длительность фильма" name="time">
+                        <input type="text" placeholder="Введите длительность фильма" value="<%= films.titleRus %>" name="time">
                     </fieldset>
                     <fieldset>
                         <label class="label" for="">Страна выпуска</label>
                         <select name="country" id="">
-                            <% countries.forEach(item => { %>
-                                <option value=""><%= item.name %></option>
-                            <% }) %> 
+                            <% country.forEach(item => { 
+                                if(item.id == films.country){ %>
+                                <option value="<%=item._id%>" selected><%= item.name %></option>
+                            <% }else{ %>
+                                <option value="<%=item._id%>"><%= item.name %></option>
+                            <% }}) %>
                         </select>
                     </fieldset>
                     <fieldset>
                         <label class="label" for="">Выберите жанр</label>
                         <select name="genre" id="">
-                            <% genres.forEach(item => { %>
-                                <option value=""><%= item.name%></option>
-                            <% }) %>
+                            <% genre.forEach(item => { 
+                                if(item.id == films.genre){ %>
+                                <option value="<%=item._id%>" selected><%= item.name %></option>
+                            <% }else{ %>
+                                <option value="<%=item._id%>"><%= item.name %></option>
+                            <% }}) %>
                         </select>
                     </fieldset>
                     <fieldset>
                         <button class="btn btn-primary add-film-btn-size" type="submit">Сохранить</button>
                     </fieldset>
-                </div>
+                </form>
             </div>
         </div>
     </div>

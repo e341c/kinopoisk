@@ -27,38 +27,40 @@
                     </div>
                 </div>
                 <h3>Сохраненные фильмы</h3>
-                <div class="main-card">
-                    <div class="card-left">
-                        <div class="film-img">
-                            <img src="/images/greenmile136x204.webp" alt="">
-                        </div>
-                        <div class="film-info">
-                            <a href="">Зеленая миля</a>
-                            <a href="">The Green Mile, 1999, 189 мин.</a>
-                            <a href="">США • драма  Режиссёр: Фрэнк Дарабонт</a>
-                            <a href=""> В ролях: Том Хэнкс, Дэвид Морс</a>
-                            <div>
-                                
-                                <button class="film-btn">
-                                    <img src="/images/icons/play 2 btn.svg" alt="">
-                                    Смотреть
-                                </button>
+                <% films.forEach(film => { %>
+                    <div class="main-card">
+                        <div class="card-left">
+                            <div class="film-img">
+                                <img src="<%= film.image %>" alt="">
                             </div>
-                            
+                            <div class="film-info">
+                                <a href=""><%= film.titleRus %></a>
+                                <a href=""><%= film.titleEng %>, <%= film.year %>, <%= film.time %> мин.</a>
+                                <a href=""><%= film.country.name %> • <%= film.genre.name %>  Режиссёр: Фрэнк Дарабонт</a>
+                                <a href=""> В ролях: Том Хэнкс, Дэвид Морс</a>
+
+                                <div>
+                                    <button class="film-btn">
+                                        <img src="/images/icons/play 2 btn.svg" alt="">
+                                        Смотреть
+                                    </button>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="card-right">
+                            <div class="film-rate">
+                                <img src="/images/icons/rating left.svg" alt="">
+                                <p>9.2</p>
+                                <img src="/images/icons/rating right.svg" alt="">
+                            </div>
+                            <button class="film-btn2">
+                                <img src="/images/icons/add.svg" alt="">
+                                Буду смотреть
+                            </button>
                         </div>
                     </div>
-                    <div class="card-right">
-                        <div class="film-rate">
-                            <img src="/images/icons/rating left.svg" alt="">
-                            <p>9.2</p>
-                            <img src="/images/icons/rating right.svg" alt="">
-                        </div>
-                        <button class="film-btn2">
-                            <img src="/images/icons/add.svg" alt="">
-                            Буду смотреть
-                        </button>
-                    </div>
-                </div>
+                <% }); %>
             </div>
         </div>
     </div>

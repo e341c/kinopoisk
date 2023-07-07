@@ -11,7 +11,8 @@ const data = [
     'Фэнтези',
     'Военные',
     'Семейные',
-    'Аниме'
+    'Аниме',
+    'Драма'
 ]
 
 async function writeDataGenre(){
@@ -26,4 +27,4 @@ async function writeDataGenre(){
     }
 }
 
-module.exports = writeDataGenre
+module.exports = {writeDataGenre}
